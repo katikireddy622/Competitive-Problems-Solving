@@ -2,14 +2,17 @@ package info.katikireddy622.problems;
 
 class Solution {
 
-	int max = -1000;
+	int max = 0;
 
 	public int solution(int[] A) {
 
 		int[] a = A;
 
 		for (int i = 0; i < a.length; i++) {
-			path(a, i, i, 0, 0);
+			if(max<(a.length-max))
+				path(a, i, i, 0, 0);
+			else
+				break;
 		}
 
 		return max;
